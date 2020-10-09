@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 0;
   margin-right: 4px;
   border-radius: 50%;
-  text-align: center;
+  text-align: none;
   width: 36px;
   height: 36px;
   transition: 0.3s;
