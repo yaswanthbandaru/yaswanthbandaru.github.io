@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/yaswanthbandaru.github.io/static/css/main.f855e6bc.css",
+    "main.js": "/yaswanthbandaru.github.io/static/js/main.e5e797ce.js",
+    "static/js/592.32021337.chunk.js": "/yaswanthbandaru.github.io/static/js/592.32021337.chunk.js",
+    "index.html": "/yaswanthbandaru.github.io/index.html",
+    "main.f855e6bc.css.map": "/yaswanthbandaru.github.io/static/css/main.f855e6bc.css.map",
+    "main.e5e797ce.js.map": "/yaswanthbandaru.github.io/static/js/main.e5e797ce.js.map",
+    "592.32021337.chunk.js.map": "/yaswanthbandaru.github.io/static/js/592.32021337.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.e5e797ce.js"
+  ]
+}
