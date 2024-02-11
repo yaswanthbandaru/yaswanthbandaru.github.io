@@ -2,6 +2,12 @@
 
 My portfolio website gives the complete student background.
 
+## Project Tools
+
+- React
+- React Bootstrap
+- Github Pages
+
 
 ## Resources 
 
