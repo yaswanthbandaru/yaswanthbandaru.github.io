@@ -41,7 +41,6 @@
 }
 
 .about-content {
-  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin: 0 auto;
@@ -82,6 +81,13 @@
   line-height: 1.8;
   margin-bottom: 1.5rem;
   text-align: left;
+}
+
+.about-skills {
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  width: 100%;
 }
 
 /* Timeline Styles */
