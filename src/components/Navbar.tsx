@@ -1,31 +1,40 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isBlogRoute = location.pathname.startsWith('/blogs');
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const close = () => setIsOpen(false);
+
+  // When on blog pages, section links must go back to home page first
+  const sectionHref = (anchor: string) => isBlogRoute ? `/${anchor}` : anchor;
 
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
+        <a href={sectionHref('#home')} className="nav-logo" onClick={close}>
           YB
-        </Link>
-        
+        </a>
+
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link to="/" className="nav-link" onClick={() => setIsOpen(false)}>Home</Link>
-          <Link to="/about" className="nav-link" onClick={() => setIsOpen(false)}>About</Link>
-          <Link to="/projects" className="nav-link" onClick={() => setIsOpen(false)}>Projects</Link>
-          <Link to="/skills" className="nav-link" onClick={() => setIsOpen(false)}>Skills</Link>
-          <Link to="/blog" className="nav-link" onClick={() => setIsOpen(false)}>Blog</Link>
-          <Link to="/contact" className="nav-link" onClick={() => setIsOpen(false)}>Contact</Link>
+          <a href={sectionHref('#home')}    className="nav-link" onClick={close}>Home</a>
+          <a href={sectionHref('#about')}   className="nav-link" onClick={close}>About</a>
+          <a href={sectionHref('#projects')} className="nav-link" onClick={close}>Projects</a>
+          <a href={sectionHref('#skills')}  className="nav-link" onClick={close}>Skills</a>
+          <Link
+            to="/blogs"
+            className={`nav-link${isBlogRoute ? ' active' : ''}`}
+            onClick={close}
+          >
+            Blog
+          </Link>
+          <a href={sectionHref('#contact')} className="nav-link" onClick={close}>Contact</a>
         </div>
-        
-        <button className="nav-toggle" onClick={toggleMenu} aria-label="Toggle navigation">
+
+        <button className="nav-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle navigation">
           <span className={`hamburger ${isOpen ? 'active' : ''}`}></span>
         </button>
       </div>

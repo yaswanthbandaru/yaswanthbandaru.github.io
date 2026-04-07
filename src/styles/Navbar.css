@@ -1,9 +1,9 @@
 :root {
-  --primary-color: #2563eb;
-  --text-color: #1f2937;
-  --bg-color: #ffffff;
-  --hover-color: #1d4ed8;
-  --transition: all 0.3s ease;
+  --primary-color:  #bd93f9;
+  --text-color:     #f8f8f2;
+  --bg-color:       #282a36;
+  --hover-color:    #ff79c6;
+  --transition:     all 0.3s ease;
 }
 
 .navbar {
@@ -11,8 +11,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--bg-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(40, 42, 54, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #334155;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
   z-index: 1000;
 }
 

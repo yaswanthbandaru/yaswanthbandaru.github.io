@@ -59,7 +59,7 @@ const Blog: React.FC = () => {
             {blogPosts.map((post) => (
               <article key={post.slug} className="blog-post-card">
                 <h2 className="post-title">
-                  <Link to={`/blog/${post.slug}`}>{post.title}</Link>
+                  {post.title}
                 </h2>
                 <div className="post-meta">
                   <span className="post-date">
@@ -80,7 +80,7 @@ const Blog: React.FC = () => {
                 {post.excerpt && (
                   <div className="post-excerpt">
                     <p>{post.excerpt}</p>
-                    <Link to={`/blog/${post.slug}`} className="read-more">
+                    <Link to={`/blogs/${post.slug}`} className="read-more">
                       Read more →
                     </Link>
                   </div>
