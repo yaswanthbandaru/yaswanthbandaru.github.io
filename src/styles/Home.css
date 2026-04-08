@@ -1,15 +1,15 @@
 /* Variables */
 :root {
-  --primary-color: #2563eb;
-  --primary-hover: #1d4ed8;
-  --text-color: #1f2937;
-  --text-light: #6b7280;
-  --bg-color: #ffffff;
-  --section-bg: #f9fafb;
-  --border-radius: 8px;
-  --transition: all 0.3s ease;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --primary-color:  #bd93f9;
+  --primary-hover:  #ff79c6;
+  --text-color:     #f8f8f2;
+  --text-light:     #6272a4;
+  --bg-color:       #282a36;
+  --section-bg:     #343746;
+  --border-radius:  8px;
+  --transition:     all 0.3s ease;
+  --shadow-sm:  0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md:  0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
 /* Home Page Specific Styles */
@@ -21,7 +21,7 @@
 }
 
 .home {
-  padding-top: 5rem;
+  padding-top: 0;
   overflow-x: hidden;
 }
 
@@ -34,13 +34,13 @@
 /* Hero Section */
 .hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 64px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 4rem 0 3rem;
+  background: linear-gradient(135deg, #282a36 0%, #343746 60%, #1e1f29 100%);
   position: relative;
   overflow: hidden;
 }
@@ -138,7 +138,7 @@
 }
 
 .btn-outline:hover {
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: rgba(189, 147, 249, 0.12);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }

@@ -23,35 +23,23 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setFormStatus('submitting');
-    
+
     try {
-      // Replace with your form submission logic
-      console.log('Form submitted:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setFormStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      const response = await fetch('https://formspree.io/f/xkopyzor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(formData),
       });
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setFormStatus('idle');
-      }, 3000);
-      
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setFormStatus('idle'), 4000);
     } catch (error) {
       console.error('Error submitting form:', error);
       setFormStatus('error');
-      
-      // Reset error message after 3 seconds
-      setTimeout(() => {
-        setFormStatus('idle');
-      }, 3000);
+      setTimeout(() => setFormStatus('idle'), 4000);
     }
   };
 
@@ -86,7 +74,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4>Email</h4>
-                    <a href="mailto:contact@example.com">contact@example.com</a>
+                    <a href="mailto:yaswanthbandaru424@example.com">yaswanthbandaru424@example.com</a>
                   </div>
                 </div>
                 
@@ -96,19 +84,19 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4>Phone</h4>
-                    <a href="tel:+919876543210">+91 98765 43210</a>
+                    <a href="tel:+919652824334">+91 96528 24334</a>
                   </div>
                 </div>
               </div>
               
               <div className="social-links">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/yaswanthbandaru/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <FaLinkedin />
                 </a>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a href="https://github.com/yaswanthbandaru" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <FaGithub />
                 </a>
-                <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <a href="https://x.com/YaswanthBandar3" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
                   <FaTwitter />
                 </a>
               </div>

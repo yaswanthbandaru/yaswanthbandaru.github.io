@@ -5,7 +5,7 @@ import type { BlogPost } from '../utils/markdownUtils';
 import { getPostBySlug } from '../utils/markdownUtils';
 import '../styles/BlogPage.css';
 
-const BlogPost: React.FC = () => {
+const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -53,7 +53,7 @@ const BlogPost: React.FC = () => {
         <div className="blog-container">
           <h1 className="blog-title">Error</h1>
           <p className="error-message">{error || 'Post not found'}</p>
-          <Link to="/blog" className="back-link">← Back to all posts</Link>
+          <Link to="/blogs" className="back-link">← Back to all posts</Link>
         </div>
       </div>
     );
@@ -88,7 +88,7 @@ const BlogPost: React.FC = () => {
           </div>
           
           <div className="post-footer">
-            <Link to="/blog" className="back-link">← Back to all posts</Link>
+            <Link to="/blogs" className="back-link">← Back to all posts</Link>
           </div>
         </article>
       </div>
@@ -96,4 +96,4 @@ const BlogPost: React.FC = () => {
   );
 };
 
-export default BlogPost;
+export default BlogPostPage;

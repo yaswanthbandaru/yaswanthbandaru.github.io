@@ -1,99 +1,70 @@
 import React from 'react';
+import { FaBriefcase, FaGraduationCap, FaCode, FaDownload } from 'react-icons/fa';
 import '../styles/About.css';
+
+const timeline = [
+  {
+    icon: <FaBriefcase />,
+    period: 'Sept 2024 – Present',
+    title: 'Full Stack Developer',
+    place: 'Dhan AI · Hyderabad, Telangana',
+  },
+  {
+    icon: <FaCode />,
+    period: 'April 2022 – May 2022',
+    title: 'Summer Intern · Software Developer',
+    place: 'eMagDevices, Ltd. · Hyderabad, Telangana',
+  },
+  {
+    icon: <FaGraduationCap />,
+    period: 'Jul 2018 – Apr 2023',
+    title: 'Dual Degree (B.Tech + M.Tech)',
+    place: 'IIT Kharagpur · Aerospace Engineering & Engineering Entrepreneurship',
+  },
+];
 
 const About: React.FC = () => {
   return (
     <div className="about">
-      <section className="about-hero">
-        <div className="container">
-          <div className="section-header">
-          <h1 className="section-title">About Me</h1>
-          <p className="section-subtitle">Get to know me better</p>
-          
-          <div className="about-content">
-            <div className="about-text">
-              <h2>Who I Am</h2>
-              <p>
-                I'm a passionate Full Stack Developer with a strong foundation in both frontend and backend technologies. 
-                With a keen eye for design and a problem-solving mindset, I create seamless and efficient web applications 
-                that deliver exceptional user experiences.
-              </p>
-              <p>
-                My journey in web development started with a curiosity about how things work behind the scenes. 
-                Since then, I've been on an exciting path of continuous learning and growth in the tech industry.
-              </p>
-              
-              <h3>My Journey</h3>
-              <div className="timeline">
-                <div className="timeline-item">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-content">
-                    <h4>2023 - Present</h4>
-                    <p>Senior Full Stack Developer at Tech Innovations Inc.</p>
-                  </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-content">
-                    <h4>2020 - 2023</h4>
-                    <p>Frontend Developer at Web Solutions Co.</p>
-                  </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-dot"></div>
-                  <div className="timeline-content">
-                    <h4>2018 - 2020</h4>
-                    <p>Freelance Web Developer</p>
-                  </div>
-                </div>
+      <div className="about-inner">
+
+        <h1 className="about-title">About Me</h1>
+
+        <p className="about-bio">
+          Hi, I'm Bandaru Yaswanth — a Software Development Engineer at Dhan, where I work
+          at the intersection of research and engineering. My day-to-day involves exploring
+          LLM-based projects, optimizing backend systems for performance, and presenting
+          proof-of-concept solutions to clients. I hold a Dual Degree from IIT Kharagpur and
+          bring a research-first mindset to every problem I work on. Outside of work, I enjoy
+          building small creative tools as a way to deepen my understanding of new concepts —
+          turning ideas into working prototypes is how I learn best.
+        </p>
+
+        <h2 className="about-section-heading">Experience & Education</h2>
+        <div className="timeline">
+          {timeline.map((item, i) => (
+            <div key={i} className="timeline-item">
+              <div className="timeline-icon">{item.icon}</div>
+              <div className="timeline-body">
+                <span className="timeline-period">{item.period}</span>
+                <h4 className="timeline-title">{item.title}</h4>
+                <p className="timeline-place">{item.place}</p>
               </div>
             </div>
-            
-            <div className="about-skills">
-              <h3>My Skills</h3>
-              <div className="skills-container">
-                <div className="skill-category">
-                  <h4>Frontend</h4>
-                  <ul>
-                    <li>React.js</li>
-                    <li>TypeScript</li>
-                    <li>JavaScript (ES6+)</li>
-                    <li>HTML5 & CSS3</li>
-                    <li>Responsive Design</li>
-                  </ul>
-                </div>
-                <div className="skill-category">
-                  <h4>Backend</h4>
-                  <ul>
-                    <li>Node.js</li>
-                    <li>Express</li>
-                    <li>RESTful APIs</li>
-                    <li>MongoDB</li>
-                    <li>PostgreSQL</li>
-                  </ul>
-                </div>
-                <div className="skill-category">
-                  <h4>Tools & More</h4>
-                  <ul>
-                    <li>Git & GitHub</li>
-                    <li>Docker</li>
-                    <li>AWS</li>
-                    <li>CI/CD</li>
-                    <li>Agile/Scrum</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div className="about-cta">
-            <h3>Let's Work Together</h3>
-            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-            <a href="/contact" className="btn btn-primary">Get In Touch</a>
-          </div>
-          </div>
+          ))}
         </div>
-      </section>
+
+        <a
+          href="/yaswanthbandaru.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-resume"
+        >
+          <FaDownload />
+          Download CV
+        </a>
+
+      </div>
     </div>
   );
 };
