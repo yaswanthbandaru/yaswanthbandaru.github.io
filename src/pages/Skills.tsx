@@ -16,6 +16,10 @@ import {
   FaExchangeAlt,
   FaSyncAlt,
   FaLinux,
+  FaBrain,
+  FaRobot,
+  FaSearch,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import {
   SiJavascript,
@@ -29,6 +33,9 @@ import {
   SiPostgresql,
   SiGraphql,
   SiGrafana,
+  SiLangchain,
+  SiOpenai,
+  SiHuggingface,
 } from "react-icons/si";
 import "../styles/SkillsPage.css";
 
@@ -85,7 +92,13 @@ const Skills: React.FC = () => {
     { name: 'Redis',      level: 70, category: 'backend',   icon: <SiRedis />,      color: '#dc382d' },
     { name: 'PostgreSQL', level: 75, category: 'backend',   icon: <SiPostgresql />, color: '#336791' },
     { name: 'GraphQL',    level: 70, category: 'backend',   icon: <SiGraphql />,    color: '#e10098' },
-    { name: 'Git',        level: 85, category: 'tools',     icon: <FaGitAlt />,     color: '#f05032' },
+    { name: 'LangChain',  level: 75, category: 'ai',        icon: <SiLangchain />,  color: '#1c8a7a' },
+    { name: 'RAG',        level: 75, category: 'ai',        icon: <FaSearch />,     color: '#8b5cf6' },
+    { name: 'OpenAI API', level: 75, category: 'ai',        icon: <SiOpenai />,     color: '#10a37f' },
+    { name: 'Hugging Face', level: 65, category: 'ai',      icon: <SiHuggingface />,color: '#ffb000' },
+    { name: 'Vector DBs', level: 70, category: 'ai',        icon: <FaProjectDiagram />, color: '#ec4899' },
+    { name: 'Prompt Engineering', level: 80, category: 'ai', icon: <FaRobot />,     color: '#14b8a6' },
+    { name: 'Git',      level: 85, category: 'tools',     icon: <FaGitAlt />,     color: '#f05032' },
     { name: 'Linux',      level: 80, category: 'tools',     icon: <FaLinux />,      color: '#fcc624' },
     { name: 'Grafana',    level: 70, category: 'tools',     icon: <SiGrafana />,    color: '#f46800' },
     { name: 'Docker',     level: 70, category: 'tools',     icon: <FaDocker />,     color: '#2496ed' },
@@ -100,6 +113,7 @@ const Skills: React.FC = () => {
     { id: "languages", name: "Languages", icon: <FaCode /> },
     { id: "frontend", name: "Frontend", icon: <FaDesktop /> },
     { id: "backend", name: "Backend", icon: <FaServer /> },
+    { id: "ai", name: "AI / ML", icon: <FaBrain /> },
     { id: "tools", name: "Tools", icon: <FaTools /> },
   ];
 
